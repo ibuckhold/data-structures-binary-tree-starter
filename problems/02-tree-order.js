@@ -57,12 +57,20 @@ function inOrderArray(root) {
     ]
 }
 
-console.log(inOrderArray(root))
+// console.log(inOrderArray(root))
 // Implement a function that takes the root of a Binary Tree
 // and returns an array containing the values from a post-order
 // traversal.
 function postOrderArray(root) {
-    // Your code here
+    if (root === null) return [];
+
+    return [
+        ...postOrderArray(root.left),
+        ...postOrderArray(root.right),
+        root.val,
+    ]
+
+
 }
 
 
